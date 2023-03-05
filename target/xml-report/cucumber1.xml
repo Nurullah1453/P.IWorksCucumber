@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="44.612">
+    <testcase classname="Checking the Contact Us" name="Submitting Contact Form" time="44.12">
+        <system-out><![CDATA[Given The user goes to the home page........................................passed
+Then Verify that the contact form is displayed with the following fields....passed
+Then Verify that the Send button is enabled.................................passed
+And Enter valid data in the Name, Email, and Subject fields.................passed
+And Leave the Phone Number and Company Name fields empty....................passed
+Then Enter a message in the Message field...................................passed
+Then Click on the Send button...............................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
