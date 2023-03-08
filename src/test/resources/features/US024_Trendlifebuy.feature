@@ -1,39 +1,27 @@
 @Project
   Feature: US024
+    Background:
+
+      Given Go to the Trendlifebuy homepage.
+      Then Login button is clicked
+      Then User login is done
+      And Dashboard button is clicked
 
     Scenario:TC01 Notification must be available
-
-    Given Go to the Trendlifebuy homepage.
-    Then Login button is clicked
-    Then User login is done
-    And Dashboard button is clicked
     And Click on the Notification link and test that the page is accessible
 
       Scenario: TC02
-
-        Given Go to the Trendlifebuy homepage.
-        Then Login button is clicked
-        Then User login is done
-        And Dashboard button is clicked
         Then Click on the Notification link and test that the page is accessible
         And Verifies that incoming notifications are visible
 
         Scenario: TC03
 
-          Given Go to the Trendlifebuy homepage.
-          Then Login button is clicked
-          Then User login is done
-          And Dashboard button is clicked
           Then Click on the Notification link and test that the page is accessible
           And Verifies that incoming notifications are visible
           And Notifications title and date headers are verified to be present
 
           Scenario: TC04
 
-            Given Go to the Trendlifebuy homepage.
-            Then Login button is clicked
-            Then User login is done
-            And Dashboard button is clicked
             Then Click on the Notification link and test that the page is accessible
             And Verifies that incoming notifications are visible
             Then Notifications title and date headers are verified to be present
@@ -42,10 +30,6 @@
 
             Scenario: TC05
 
-              Given Go to the Trendlifebuy homepage.
-              Then Login button is clicked
-              Then User login is done
-              And Dashboard button is clicked
               Then Click on the Notification link and test that the page is accessible
               And Verifies that incoming notifications are visible
               Then Notifications title and date headers are verified to be present
@@ -55,10 +39,6 @@
 
               Scenario: TC06
 
-                Given Go to the Trendlifebuy homepage.
-                Then Login button is clicked
-                Then User login is done
-                And Dashboard button is clicked
                 Then Click on the Notification link and test that the page is accessible
                 And Verifies that incoming notifications are visible
                 Then Notifications title and date headers are verified to be present
