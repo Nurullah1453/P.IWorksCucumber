@@ -12,6 +12,8 @@ public class TrendlifebuyHomePage {
 
     @FindBy(xpath = "(//a[text()='Login'])[1]")
     public WebElement loginLink;
+    @FindBy(xpath = "//a[text()='/ Logout']")
+    public WebElement logoutLink;
     @FindBy(xpath = "//a[text()='Dashboard']")
     public WebElement dashBoardLink;
     @FindBy(xpath = "//input[@placeholder='Email address']")

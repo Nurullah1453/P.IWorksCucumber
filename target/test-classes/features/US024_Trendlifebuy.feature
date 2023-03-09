@@ -3,7 +3,6 @@
 
     Background:
       Given Go to the Trendlifebuy homepage.
-      Then Login button is clicked
       Then User login is done
       And Dashboard button is clicked
 

@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "utils.formatter.PrettyReports:target/cucumber-pretty-reports"},
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@Project",
+        tags = "@Project02",
         dryRun = false
 )
 

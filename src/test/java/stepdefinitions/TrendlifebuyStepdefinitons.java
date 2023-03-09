@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import pages.TrendlifebuyDashboardPage;
 import pages.TrendlifebuyHomePage;
 import pages.TrendlifebuyNotificationsPage;
 import utilities.ConfigReader;
@@ -15,18 +16,16 @@ import utilities.ReusableMethods;
 public class TrendlifebuyStepdefinitons {
     TrendlifebuyHomePage homePage=new TrendlifebuyHomePage();
     TrendlifebuyNotificationsPage notificationsPage=new TrendlifebuyNotificationsPage();
+    TrendlifebuyDashboardPage dashboardPage=new TrendlifebuyDashboardPage();
     Actions actions = new Actions(Driver.getDriver());
 
     @Given("Go to the Trendlifebuy homepage.")
     public void go_to_the_trendlifebuy_homepage() {
         Driver.getDriver().navigate().to(ConfigReader.getProperty("tbUrl"));
     }
-    @Then("Login button is clicked")
-    public void login_button_is_clicked() {
-        homePage.loginLink.click();
-    }
     @Then("User login is done")
     public void user_login_is_done() {
+        homePage.loginLink.click();
         homePage.loginEmailBox.sendKeys(ConfigReader.getProperty("tbEmail"));
         homePage.loginPasswordBox.sendKeys(ConfigReader.getProperty("tbPassword"));
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -85,4 +84,34 @@ public class TrendlifebuyStepdefinitons {
     public void closesThePage() {
         Driver.closeDriver();
     }
+    @Given("Check that the LOGOUT link is visible")
+    public void check_that_the_logout_link_is_visible() {
+        Assert.assertTrue(homePage.logoutLink.isDisplayed());
+    }
+    @Then("Click on the LOGOUT link")
+    public void click_on_the_logout_link() {
+        homePage.logoutLink.click();
+    }
+    @Then("Successfully logged out of account")
+    public void successfully_logged_out_of_account() {
+        Assert.assertTrue(homePage.loginLink.isDisplayed());
+    }
+    @Then("There must be a logout link in the list")
+    public void there_must_be_a_logout_link_in_the_list() {
+        actions.sendKeys(Keys.PAGE_DOWN)
+                        .sendKeys(Keys.PAGE_DOWN)
+                                .perform();
+        Assert.assertTrue(dashboardPage.dasboardListLogoutLink.isDisplayed());
+
+    }
+    @Then("Logs out by pressing the logout link in the list")
+    public void logs_out_by_pressing_the_logout_link_in_the_list() {
+
+        ReusableMethods.bekle(1);
+        dashboardPage.dasboardListLogoutLink.click();
+        Assert.assertTrue(homePage.logoutLink.isDisplayed());
+    }
+
+
 }
+
