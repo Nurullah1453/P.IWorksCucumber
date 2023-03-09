@@ -39,6 +39,7 @@ public class TrendlifebuyStepdefinitons {
     }
     @Then("Click on the Notification link and test that the page is accessible")
     public void click_on_the_notification_link_and_test_that_the_page_is_accessible() {
+        ReusableMethods.bekle(1);
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.bekle(1);
         notificationsPage.notificationLink.click();
@@ -76,6 +77,12 @@ public class TrendlifebuyStepdefinitons {
     @And("Confirm that the type is changeable on the Setting link")
     public void confirmThatTheTypeIsChangeableOnTheSettingLink() {
         notificationsPage.typeChange.click();
+        ReusableMethods.bekle(1);
         Assert.assertTrue(notificationsPage.updatedSuccessfully.isDisplayed());
+    }
+
+    @And("Closes the page")
+    public void closesThePage() {
+        Driver.closeDriver();
     }
 }

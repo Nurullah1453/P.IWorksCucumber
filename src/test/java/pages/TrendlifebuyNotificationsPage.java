@@ -27,6 +27,6 @@ public class TrendlifebuyNotificationsPage {
     public WebElement notificationTitleText;
     @FindBy(xpath = "//h4[text()='Package Code:  ' ]")
     public WebElement packageCodeTitle;
-    @FindBy(xpath = "//div[text()='Updated successfully!']")
+    @FindBy(xpath = "//div[text()='Success']")
     public WebElement updatedSuccessfully;
 }
